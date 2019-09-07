@@ -9,4 +9,5 @@ So, long story shot, I want to write and share some problems/solutions avoiding:
 - Not so many C default libraries (that's why I think this is kinda tricky)
 
 Anyway, I'm learning here, join if you are interested.
+
 JD
