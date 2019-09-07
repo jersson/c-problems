@@ -7,6 +7,7 @@ So, long story shot, I want to write and share some problems/solutions avoiding:
 - Too many lines of code per function (25 was the number)
 - Line of code not so long (80 was the number)
 - Not so many C default libraries (that's why I think this is kinda tricky)
+- Warnings/Errors/Something wrong after run the compiler flags -Wall -Wextra -Werror
 
 Anyway, I'm learning here, join if you are interested.
 
