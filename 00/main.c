@@ -11,7 +11,7 @@ int get_string_size(char *s)
 	return (index);
 }
 
-int		is_upper_case(char c)
+int	is_upper_case(char c)
 {
 	int result;
 
@@ -33,7 +33,8 @@ char    *convert_string(char *s)
 	size = get_string_size(s);
 	result = (char *)malloc(sizeof(char)*size + 1);
 
-	int i = 0;
+	result[0] = s[0];
+	int i = 1;
 	while (s[i] != '\0')
 	{
 		if (is_upper_case(s[i]) == 1)
