@@ -25,6 +25,11 @@ char	to_lower_case(char c)
 {
 	return (c + 32);
 }
+
+char	to_upper_case(char c)
+{
+	return (c - 32);
+}
 char    *convert_string(char *s)
 {
     char *result;
@@ -33,7 +38,11 @@ char    *convert_string(char *s)
 	size = get_string_size(s);
 	result = (char *)malloc(sizeof(char)*size + 1);
 
-	result[0] = s[0];
+	if (is_upper_case(s[0]) == 1)
+		result[0] = s[0];
+	else
+		result[0] = to_upper_case(s[0]);
+
 	int i = 1;
 	while (s[i] != '\0')
 	{
