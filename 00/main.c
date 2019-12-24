@@ -3,59 +3,76 @@
 
 int get_string_size(char *s)
 {
-	int index;
+	int index = 0;
 	
-	index = 0;
 	while (s[index] != '\0')
 		index++;
+	
 	return (index);
-}
-
-int	is_upper_case(char c)
-{
-	int result;
-
-	result = 0;
-	if (c >= 'A' && c <= 'Z')
-		result = 1;
-	return (result);
 }
 
 char	to_lower_case(char c)
 {
-	return (c + 32);
+	char lower_result = c;
+	
+	if (c >= 'A' && c <= 'Z')
+	{
+		lower_result = c + 32;
+	}
+	
+	return (lower_result);
 }
 
 char	to_upper_case(char c)
 {
-	return (c - 32);
-}
-char    *convert_string(char *s)
-{
-    char *result;
-	int size;
+	char upper_result = c;
 
-	size = get_string_size(s);
-	result = (char *)malloc(sizeof(char)*size + 1);
-
-	if (is_upper_case(s[0]) == 1)
-		result[0] = s[0];
-	else
-		result[0] = to_upper_case(s[0]);
-
-	int i = 1;
-	while (s[i] != '\0')
+	if (c >= 'a' && c <= 'z')
 	{
-		if (is_upper_case(s[i]) == 1)
-			result[i] = to_lower_case(s[i]);
+		upper_result = c - 32;
+	}
+	
+	return (upper_result);
+}
+
+int	get_index_first_letter(char *word)
+{
+	int index = 0;
+
+	while (word[index])
+	{
+		if (word[index] != ' ')
+			break;
+		index++;
+	}
+	
+	return (index);
+}
+
+char	*to_camel_case(char *word, int index_first_letter, int size)
+{
+	char	*converted = (char *)malloc(sizeof(char)*size + 1);
+	int i = 0;
+
+	while (word[i])
+	{
+		if (i == index_first_letter)
+			converted[i] = to_upper_case(word[i]);
 		else
-			result[i] = s[i];
+			converted[i] = to_lower_case(word[i]);
 		i++;
 	}
+	
+	return (converted);
+}
 
-	result[i] = '\0';
+char    *convert_string(char *s)
+{
+	int size = get_string_size(s);
+	int index = get_index_first_letter(s);
+	char *converted_string = to_camel_case(s, index, size);
 
-    return (result);
+    return (converted_string);
 }
 
 int main(int argc, char **argv)
