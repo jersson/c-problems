@@ -4,4 +4,4 @@ I think this a good title, just in case of misunderstand, we have to read a word
 
 Example:
 Input : "HellOOO"
-Output: :Hellooo"
+Output: "Hellooo"
