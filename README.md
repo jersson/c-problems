@@ -9,6 +9,6 @@ So, long story shot, I want to write and share some problems/solutions avoiding:
 - Not so many C default libraries (that's why I think this is kinda tricky)
 - Warnings/Errors/Something wrong after run the compiler flags -Wall -Wextra -Werror
 
-Anyway, I'm learning here and this is the [problem list](PROBLEMS.md) join if you want some fun :)
+Anyway, I'm learning here and this is the [problem list](PROBLEMS.md), join if you want some fun :)
 
 JD
