@@ -103,6 +103,8 @@ int main(int argc, char **argv)
 {
     if (argc >= 2)
     {
+
+		/*
 		for (int i = 1; i < argc; ++i) {
 			printf("Parameter Nro '%d' \n", i);
 			char *s = argv[i];
@@ -111,6 +113,21 @@ int main(int argc, char **argv)
 			printf("After  '%s'\n", result);
 			printf("*************************** \n");
 		}
+        */
+    int indexArg = 1;
+
+    while (indexArg < argc) {
+
+        printf("Parameter Nro %d \n", indexArg);
+        char *s = argv[indexArg];
+        char *result = convert_string(s);
+        printf("Before '%s'\n", s);
+        printf("After  '%s'\n", result);
+              
+        printf("\n");
+
+        ++indexArg;
+    }
     }
     return  (0);
 }

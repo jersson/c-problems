@@ -1,0 +1,2 @@
+language = "c"
+run = "gcc ./02/main.c && ./a.out 'HellOOO', 'julio AviLA', 'Prueba SSSSSSSSSS'"
